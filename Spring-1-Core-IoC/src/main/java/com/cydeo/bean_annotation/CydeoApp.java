@@ -14,12 +14,18 @@ public class CydeoApp{
         ft.createAccount();
 
         System.out.println("-------------------------------------");
+        //PartTimeMentor pt1 = container.getBean("p1",PartTimeMentor.class);
+        //pt1.createAccount();
+
+        System.out.println("-------------------------------------");
+        //PartTimeMentor pt2 = container.getBean("p2",PartTimeMentor.class);
         PartTimeMentor pt = container.getBean(PartTimeMentor.class);
         pt.createAccount();
 
         System.out.println("-------------------------------------");
         String str = container.getBean(String.class);
         System.out.println(str);
+
 
     }
 
