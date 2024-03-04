@@ -12,6 +12,9 @@ public class CydeoApp {
 
         Python python = container.getBean(Python.class);
         python.getTeachingHours();
+        container.getBean(Selenium.class).getTeachingHours();
+        System.out.println("Office hours = "+container.getBean(OfficeHours.class).getHours());
+
     }
 
 
