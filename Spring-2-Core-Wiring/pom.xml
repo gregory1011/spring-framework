@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cydeo</groupId>
-    <artifactId>Spring-1-Core-IoC</artifactId>
+    <artifactId>Spring-2-Core-IoC</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
