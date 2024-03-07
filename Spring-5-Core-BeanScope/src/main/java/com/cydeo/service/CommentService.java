@@ -6,12 +6,14 @@ import com.cydeo.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 //@Scope("prototype")
-@Scope(BeanDefinition.SCOPE_PROTOTYPE)
+//@Scope(BeanDefinition.SCOPE_PROTOTYPE)
+@Lazy
 public class CommentService {
 
     // these are being injected in this class 2 dependency classes we make them final as being immutable/unchanged.
@@ -23,6 +25,7 @@ public class CommentService {
     public CommentService(CommentRepository commentRepository, @Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy) {
         this.commentRepository = commentRepository;
         this.commentNotificationProxy = commentNotificationProxy;
+        System.out.println("Hello");
     }
 
 

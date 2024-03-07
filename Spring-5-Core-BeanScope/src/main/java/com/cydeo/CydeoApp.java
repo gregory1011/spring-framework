@@ -16,13 +16,13 @@ public class CydeoApp {
 
         ApplicationContext container = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-        CommentService  cs1 = container.getBean(CommentService.class);
-        CommentService  cs2 = container.getBean(CommentService.class);
-
-        System.out.println(cs1);
-        System.out.println(cs2);
-
-        System.out.println(cs1 == cs2);  //is true. -But after using @Scope(prototype) it becomes false
+//        CommentService  cs1 = container.getBean(CommentService.class);
+//        CommentService  cs2 = container.getBean(CommentService.class);
+//
+//        System.out.println(cs1);
+//        System.out.println(cs2);
+//
+//        System.out.println(cs1 == cs2);  //is true. -But after using @Scope(prototype) it becomes false
 
 
 
