@@ -23,7 +23,7 @@ public class MentorController {
 
       model.addAttribute("mentors", mentorList);
 
-      return "mentor/mentor";
+      return "mentor/mentor-list"; // packagename/filename
     }
 
 }

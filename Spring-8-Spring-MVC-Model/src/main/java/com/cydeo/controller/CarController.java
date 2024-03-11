@@ -35,7 +35,7 @@ public class CarController {
 
         model.addAttribute("make", make);
         model.addAttribute("year", year);
-        return "car/car-info";
+        return "car/car-info";  // packagename/filename
     }
 
 }

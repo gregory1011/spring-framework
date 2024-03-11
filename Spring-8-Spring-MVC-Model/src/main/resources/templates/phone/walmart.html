@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+<h2>Welcome to Walmart store</h2>
+
+<table>
+
+    <thead>
+    <tr>
+        <td>Brand</td>
+        <td>Phone</td>
+        <td>Price</td>
+        <td>New</td>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr>
+        <td th:text="${phone.get(0).brand}"></td>
+        <td th:text="${phone.get(0).model}"></td>
+        <td th:text="${phone.get(0).price}"></td>
+        <td th:text="${phone.get(0).isNew}"></td>
+    </tr>
+
+    <tr>
+        <td th:text="${phone.get(2).getBrand()}"></td>
+        <td th:text="${phone.get(2).getModel()}"></td>
+        <td th:text="${phone.get(2).getPrice()}"></td>
+        <td th:text="${phone.get(2).getIsNew()}"></td>
+    </tr>
+    </tbody>
+
+
+</table>
+
+
+</body>
+</html>
