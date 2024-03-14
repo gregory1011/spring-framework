@@ -11,7 +11,7 @@ public class OvertimeSalaryService {
     private final EmployeeRep employeeRep;
     private final HoursRep hoursRep;
 
-    public OvertimeSalaryService(EmployeeRep employeeRep, @Qualifier("overtimeHours") HoursRep hoursRep) {
+    public OvertimeSalaryService(EmployeeRep employeeRep, @Qualifier("OTH") HoursRep hoursRep) {
         this.employeeRep = employeeRep;
         this.hoursRep = hoursRep;
     }
