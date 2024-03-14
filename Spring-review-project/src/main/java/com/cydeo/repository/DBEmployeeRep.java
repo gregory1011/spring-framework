@@ -1,17 +1,17 @@
-package com.cydeo.Repository;
+package com.cydeo.repository;
 
-import com.cydeo.Model.Employee;
-import lombok.AllArgsConstructor;
+import com.cydeo.model.Employee;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
 public class DBEmployeeRep implements EmployeeRep{
 
-    Employee employee;
 
     @Override
     public Double getHourlyRate() {
+
+        Employee employee = new Employee("Messi", "Soccer", 90D);
+
         return employee.getHourlyRate();
     }
 
