@@ -1,4 +1,5 @@
-package com.cydeo.Repository;
+
+package com.cydeo.repository;
 
 public interface EmployeeRep {
 

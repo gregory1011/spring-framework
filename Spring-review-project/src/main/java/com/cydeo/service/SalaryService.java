@@ -1,7 +1,8 @@
-package com.cydeo.Service;
 
-import com.cydeo.Model.Employee;
-import com.cydeo.Repository.RegularHours;
+
+package com.cydeo.service;
+import com.cydeo.model.Employee;
+import com.cydeo.repository.RegularHours;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

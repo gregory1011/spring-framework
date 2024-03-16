@@ -1,12 +1,13 @@
-package com.cydeo.Repository;
+package com.cydeo.repository;
 
-import com.cydeo.Model.Employee;
+import com.cydeo.model.Employee;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+
 @Component
 @AllArgsConstructor
-public class DBEmployeeRep implements EmployeeRep{
+public class DBEmployeeRep implements com.cydeo.repository.EmployeeRep {
 
     Employee employee;
 
