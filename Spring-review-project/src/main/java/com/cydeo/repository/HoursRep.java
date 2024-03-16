@@ -1,4 +1,4 @@
-package com.cydeo.repository;
+package com.cydeo.Repository;
 
 public interface HoursRep {
 
