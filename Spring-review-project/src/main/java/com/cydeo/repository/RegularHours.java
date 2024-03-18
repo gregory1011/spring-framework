@@ -9,4 +9,5 @@ public class RegularHours implements HoursRep{
     public Integer getHours() {
         return 40;
     }
+
 }
