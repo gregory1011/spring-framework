@@ -1,8 +1,8 @@
 package com.cydeo;
 
-import com.cydeo.config.ConfigApp;
-import com.cydeo.service.OvertimeSalaryService;
-import com.cydeo.service.SalaryService;
+import com.cydeo.Config.ConfigApp;
+import com.cydeo.Service.OvertimeSalaryService;
+import com.cydeo.Service.SalaryService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

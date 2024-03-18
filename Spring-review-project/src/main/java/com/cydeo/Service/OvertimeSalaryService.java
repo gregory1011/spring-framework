@@ -1,8 +1,8 @@
 
-package com.cydeo.service;
+package com.cydeo.Service;
 
-import com.cydeo.repository.EmployeeRep;
-import com.cydeo.repository.HoursRep;
+import com.cydeo.Repository.EmployeeRep;
+import com.cydeo.Repository.HoursRep;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -21,4 +21,5 @@ public class OvertimeSalaryService {
        // hourlyRate * regularHours
         System.out.println("Overtime salary = $"+( employeeRep.getHourlyRate() * hoursRep.getHours() ));
     }
+
 }
