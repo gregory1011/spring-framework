@@ -1,7 +1,8 @@
-package com.cydeo.model;
 
+package com.cydeo.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
 
 @Data
 @AllArgsConstructor
