@@ -1,8 +1,6 @@
-
-package com.cydeo.repository;
+package com.cydeo.Repository;
 
 public interface EmployeeRep {
 
     public Double getHourlyRate();
-
 }

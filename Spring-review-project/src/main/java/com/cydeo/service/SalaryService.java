@@ -1,20 +1,26 @@
+package com.cydeo.Service;
 
-
-package com.cydeo.service;
-import com.cydeo.model.Employee;
-import com.cydeo.repository.RegularHours;
-import lombok.AllArgsConstructor;
+import com.cydeo.Model.Employee;
+import com.cydeo.Repository.EmployeeRep;
+import com.cydeo.Repository.HoursRep;
+import com.cydeo.Repository.RegularHours;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
 public class SalaryService {
 
-    Employee employee;
-    RegularHours regularHours;
+    private final EmployeeRep employeeRep;
+    private final HoursRep hoursRep;
+
+    public SalaryService(EmployeeRep employeeRep, @Qualifier("regularHours") HoursRep hoursRep) {
+        this.employeeRep = employeeRep;
+        this.hoursRep = hoursRep;
+    }
 
     public void calculateRegularSalary() {
-        System.out.println((employee.getHourlyRate() * regularHours.getHours()));
+        //HourlyRate * Regular Hours
+        System.out.println((employeeRep.getHourlyRate() * hoursRep.getHours()));
     }
 
 
