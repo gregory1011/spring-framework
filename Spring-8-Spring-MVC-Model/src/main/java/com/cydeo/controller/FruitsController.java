@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/fruits")
+@RequestMapping("/shop")
 public class FruitsController {
 
     @RequestMapping("/all") // http://localhost:8080/fruits/all
@@ -68,5 +68,27 @@ public class FruitsController {
 
         return "fruits/star-market";
     }
+
+    // localhost:8080/shop/new
+    @RequestMapping("/new")
+    public String getInfo(@RequestParam String fruitName, Model model){// localhost:8080/shop/new?fruitName=banana
+
+        model.addAttribute("fname", fruitName);
+
+        System.out.println(fruitName); // it prints in console banana
+        return "fruits/fruits";
+    }
+
+
+
+    // localhost:8080/shop/all/red
+    @RequestMapping("/all/{red}")  // @PathVariable
+    public String getInfo2(@PathVariable String red, Model model){
+
+        model.addAttribute("combo", red);
+        System.out.println("floor");
+        return "fruits/fruits";
+    }
+
 
 }
