@@ -31,7 +31,9 @@ public class StudentController {
        numbers.add(9);
        model.addAttribute("numbers", numbers);
 
+       // creating one object from student class and assigning value
       Student student = new Student(13, "Leo", "Messi");
+      //                                ( key ,  value );
       model.addAttribute("student", student);
 
         return "student/welcome"; // packagename/filename
