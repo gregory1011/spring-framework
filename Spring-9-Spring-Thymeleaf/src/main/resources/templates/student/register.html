@@ -24,19 +24,20 @@
 <!--Link-->
 <a th:href="@{https://cydeo.com}">Cydeo Home Page</a>
 <br>
-<a th:href="@{/student/register}">Link1</a>
+<a th:href="@{/student/register}">Same link</a>
 <br>
-<a th:href="@{/student/welcome}">Welcome</a>
+<a th:href="@{/student/welcome}">Student Welcome</a>
 <br>
 <a th:href="@{https://google.com}">Google home page</a>
 <br>
 
 <!--Adding parameters to link-->
 
-<a th:href="@{/student/welcome(id=3003)}">Parameter link</a>
+<a th:href="@{/student/welcome(id=3003)}">Parameter link id</a>
 <br>
-<a th:href="@{/student/welcome2(age=${students.get(0).getAge()})}">Parameter link</a>
+<a th:href="@{/student/welcome2(age=${students.get(0).getAge()})}">Parameter link age dynamic</a>
 <br>
+
 
 
 <!--Iteration-->
