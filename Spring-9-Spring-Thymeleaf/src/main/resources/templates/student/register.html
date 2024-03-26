@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Student</title>
+    <title>Student Register</title>
 </head>
 <body>
 
@@ -11,12 +11,44 @@
 <br>
 <br>
 
+<!--Displaying Value-->
    <h4 th:text="${students.get(1)}"></h4>
 <br>
    <h4 th:text="${students.get(3).getFirstName()}"></h4>
 <br>
+
+<!--Concatenation-->
    <h4 th:text="${'Welcome ' +students.get(0).getFirstName()}"></h4>
 <br>
+
+<!--Link-->
+<a th:href="@{https://cydeo.com}">Cydeo Home Page</a>
+<br>
+<a th:href="@{/student/register}">Link1</a>
+<br>
+<a th:href="@{/student/welcome}">Welcome</a>
+<br>
+<a th:href="@{https://google.com}">Google home page</a>
+<br>
+
+<!--Adding parameters to link-->
+
+<a th:href="@{/student/welcome(id=3003)}">Parameter link</a>
+<br>
+<a th:href="@{/student/welcome2(age=${students.get(0).getAge()})}">Parameter link</a>
+<br>
+
+
+<!--Iteration-->
+
+<br>
+<h2>Students name</h2>
+<ul>
+    <li th:each="names : ${students}" th:text="${names.getFirstName()}"></li>
+</ul>
+
+
+
 
 
 
