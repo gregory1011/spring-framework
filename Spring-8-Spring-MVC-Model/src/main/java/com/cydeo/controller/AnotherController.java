@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/another")
 public class AnotherController {
 
-    @RequestMapping("/list")  // localhost:8080/another/mentor
+    @RequestMapping("/mentor")  // localhost:8080/another/mentor
     public String mentors(Model model){
 
         List<Mentor> mentorList = new ArrayList<>();
@@ -23,7 +23,7 @@ public class AnotherController {
 
         model.addAttribute("mentors", mentorList);
 
-        return "mentor-list";  // packagename/filename
+        return "mentor/mentor-list";  // packagename/filename
     }
 
 }
