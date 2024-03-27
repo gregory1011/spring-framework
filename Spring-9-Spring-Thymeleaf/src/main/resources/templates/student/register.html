@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Student Register</title>
+    <title th:text="#{index.page.title}">Student Register</title>
 </head>
 <body>
 
@@ -12,6 +12,7 @@
 <br>
 
 <!--Displaying Value-->
+
    <h4 th:text="${students.get(1)}"></h4>
 <br>
    <h4 th:text="${students.get(3).getFirstName()}"></h4>
@@ -47,6 +48,25 @@
 <ul>
     <li th:each="names : ${students}" th:text="${names.getFirstName()}"></li>
 </ul>
+
+<!--Fragments-->
+
+<!--<br>-->
+<!--<div th:replace="/fragments/index :: footer-menu">Footer Menu</div>-->
+<!--<br>-->
+<!--<div th:replace="/fragments/index :: main-menu">Main Menu</div>-->
+
+
+<!--Conditional Logic-->
+<div th:text="${students.get(0).age > 25 ? 'Eligible' : 'Nost Eligible'}"></div>
+
+<div>
+    <span th:if="${students.get(0).getState() == 'Arizona'}">Arizona</span>
+    <span th:unless="${students.get(0).getState() == 'Arizona'}">Not Arizona</span>
+</div>
+
+
+
 
 
 
