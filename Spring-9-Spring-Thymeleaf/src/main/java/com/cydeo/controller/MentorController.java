@@ -3,8 +3,7 @@ package com.cydeo.controller;
 import com.cydeo.model.Mentor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,5 +21,12 @@ public class MentorController {
         model.addAttribute("batchList", batchList);
 
         return "/mentor/mentor-register";
+    }
+
+    @PostMapping("/confirm")
+    public String showForm2(@ModelAttribute("mentor") Mentor mentor, Model model){
+
+       // return "/mentor/mentor-confirmation";
+        return "redirect:/mentor/register"; // this means the form data will be submited then redirect back to mentor/register
     }
 }
