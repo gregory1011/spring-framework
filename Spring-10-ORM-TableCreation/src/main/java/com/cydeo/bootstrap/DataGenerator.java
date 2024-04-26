@@ -2,17 +2,15 @@ package com.cydeo.bootstrap;
 
 import com.cydeo.entity.Car;
 import com.cydeo.repository.CarRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
+@AllArgsConstructor
 public class DataGenerator implements CommandLineRunner {
 
     private final CarRepository carRepository;
-
-    public DataGenerator(CarRepository carRepository) {
-        this.carRepository = carRepository;
-    }
 
     @Override
     public void run(String... args) throws Exception {
