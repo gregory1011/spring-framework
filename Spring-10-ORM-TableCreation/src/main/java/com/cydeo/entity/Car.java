@@ -1,13 +1,12 @@
 package com.cydeo.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "CarTable")
-@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Car {
 
