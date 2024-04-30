@@ -2,6 +2,7 @@ package com.cydeo.bootstrap;
 
 import com.cydeo.entity.Department;
 import com.cydeo.entity.Employee;
+import com.cydeo.entity.Region;
 import com.cydeo.enums.Gender;
 import com.cydeo.repository.DepartmentRepo;
 import com.cydeo.repository.EmployeeRepo;
@@ -19,14 +20,14 @@ import java.util.List;
 public class DataGenerator implements CommandLineRunner {
 
     private final EmployeeRepo employeeRepo;
-    private final DepartmentRepo departmentRepo;
+//    private final DepartmentRepo departmentRepo;
 
 
     @Override
     public void run(String... args) throws Exception {
 
         List<Employee> empList = new ArrayList<>();
-        List<Department> depList = new ArrayList<>();
+//        List<Department> depList = new ArrayList<>();
 
 
         Employee e1 = new Employee("Berrie", "Manueau", "bmanueau0@dion.ne.jp", LocalDate.of(2006,04,20), Gender.Female, 154864D);
@@ -36,7 +37,6 @@ public class DataGenerator implements CommandLineRunner {
         Employee e5 = new Employee("Feliks", "Morffew", "fmorffew4@a8.net", LocalDate.of(2003,01,14), Gender.Male, 55307D);
 
         empList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
-        employeeRepo.saveAll(empList);
 
         Department d1 = new Department("Sports","Outdoors");
         Department d2 = new Department("Tools","Hardware");
@@ -44,8 +44,33 @@ public class DataGenerator implements CommandLineRunner {
         Department d4 = new Department("Phones & Tablets","Electronics");
         Department d5 = new Department("Computers","Electronics");
 
-        depList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
-        departmentRepo.saveAll(depList);
+//        depList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
+//        departmentRepo.saveAll(depList);
+
+        Region r1 = new Region("Southwest","United States");
+        Region r2 = new Region("Central","United States");
+        Region r3 = new Region("Northwest","United States");
+        Region r4 = new Region("Quebec'","Canada");
+        Region r5 = new Region("Central","Asia");
+
+
+        e1.setDepartment(d1);
+        e2.setDepartment(d2);
+        e3.setDepartment(d3);
+        e4.setDepartment(d4);
+        e5.setDepartment(d5);
+
+        e1.setRegion(r1);
+        e2.setRegion(r2);
+        e3.setRegion(r3);
+        e4.setRegion(r4);
+        e5.setRegion(r5);
+
+
+        employeeRepo.saveAll(empList);
 
     }
+
+
+
 }

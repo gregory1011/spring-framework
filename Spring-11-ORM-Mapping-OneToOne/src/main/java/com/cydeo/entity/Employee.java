@@ -11,7 +11,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "employees")
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class Employee extends BaseEntity {
 
@@ -21,11 +20,26 @@ public class Employee extends BaseEntity {
     @Column(columnDefinition = "Date")
     private LocalDate hireDate;
 
-//    private String department;
     @Enumerated(EnumType.STRING) // hibernate will create table 0 and 1 is we don't use this annotation
     private Gender gender;
     private Double salary;
-//    private Integer regionId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+//    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}) // cascade allow us to join table and then save or remove from both tables
+    @JoinColumn(name = "department_id") // this line of code represents column name in employees table using join
+    private Department department;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "region_id")
+    private Region region;
 
 
+    public Employee(String firstName, String lastName, String email, LocalDate hireDate, Gender gender, Double salary) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.hireDate = hireDate;
+        this.gender = gender;
+        this.salary = salary;
+    }
 }
