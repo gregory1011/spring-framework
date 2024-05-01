@@ -18,6 +18,7 @@ public class Payment extends BaseModel{
     private LocalDate createdDate;
 
     private BigDecimal amount;
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @OneToOne(cascade = CascadeType.ALL)
