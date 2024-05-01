@@ -24,6 +24,12 @@ public class Payment extends BaseModel{
     @OneToOne(cascade = CascadeType.ALL)
     private PaymentDetail paymentDetail;
 
+    @ManyToOne
+    private Merchant merchant;
+
+    @ManyToOne
+    private Customer customer;
+
     public Payment(LocalDate createdDate, BigDecimal amount, Status status) {
         this.createdDate = createdDate;
         this.amount = amount;
