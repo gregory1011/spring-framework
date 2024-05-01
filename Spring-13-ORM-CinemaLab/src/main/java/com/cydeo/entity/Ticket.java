@@ -13,16 +13,17 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @NoArgsConstructor
-public class MovieCinema extends BaseModel{
+public class Ticket extends BaseModel{
+
+    private Integer seatNumber;
+    private Integer rowNumber;
 
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Movie movie;
+    private MovieCinema movieCinema;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Cinema cinema;
-
-
+    private User userAccount;
 }

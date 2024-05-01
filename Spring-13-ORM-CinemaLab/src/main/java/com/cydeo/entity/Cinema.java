@@ -1,6 +1,8 @@
 package com.cydeo.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,11 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Cinema extends BaseModel{
 
-    private String name, sponsorName;
+    private String name;
+    private String sponsoredName;
 
-    public Cinema(String name) {
-        this.name = name;
-    }
-
+    @ManyToOne(fetch = FetchType.LAZY)
     private Location location;
+
 }
