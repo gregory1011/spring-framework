@@ -1,8 +1,10 @@
 package com.cydeo.bootstrap;
 
+import com.cydeo.model.Course;
 import com.cydeo.model.Department;
 import com.cydeo.model.Employee;
 import com.cydeo.model.Region;
+import com.cydeo.repository.CourseRepo;
 import com.cydeo.repository.DepartmentRepo;
 import com.cydeo.repository.EmployeeRepo;
 import com.cydeo.repository.RegionRepo;
@@ -12,14 +14,17 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Component
 @AllArgsConstructor
 public class DataGenerator implements CommandLineRunner {
 
+    // dependencies injection
     private final RegionRepo regionRepo;
     private final DepartmentRepo departmentRepo;
     private final EmployeeRepo employeeRepo;
+    private final CourseRepo courseRepo;
 
 
     @Override
@@ -76,6 +81,21 @@ public class DataGenerator implements CommandLineRunner {
         System.out.println("------------- Employee test End ------------------");
 
 
+        System.out.println("------------- Course test Start ------------------");
+
+        courseRepo.findByCategory("Spring").forEach(System.out::println);
+        System.out.println("==========================");
+        courseRepo.findByCategoryOrderByName("Spring").forEach(System.out::println);
+
+        System.out.println(courseRepo.existsByName("JavaScript for All"));
+
+        System.out.println(courseRepo.countByCategory("Spring"));
+
+        System.out.println(courseRepo.findByNameStartingWith("Scalable"));
+
+
+
+        System.out.println("------------- Course test End --------------------");
 
 
     }
