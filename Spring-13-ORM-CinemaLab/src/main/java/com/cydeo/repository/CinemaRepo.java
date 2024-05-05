@@ -22,7 +22,7 @@ public interface CinemaRepo extends JpaRepository<Cinema, Long> {
     List<Cinema> getCinemaByLocation_Country(String country);
 
     //Write a derived query to list all cinemas with a specific name or sponsored name
-    List<Cinema> getCinemaByNameOrSponsoredName(String name);
+   // List<Cinema> re(String name);
 
     // ------------------- JPQL QUERIES ------------------- //
 
