@@ -16,13 +16,12 @@ public interface AccountRepo extends JpaRepository<Account, Long> {
     // ------------------- DERIVED QUERIES ------------------- //
 
     //Write a derived query to list all accounts with a specific country or state
-   // List<Account> findAccountsByCountryOrState(String name);
-
+    List<Account> readDistinctByCountryOrState(String country, String state);
     //Write a derived query to list all accounts with age lower than or equal to a specific value
     List<Account> findAccountsByAgeLessThanEqual(int age);
 
     //Write a derived query to list all accounts with a specific role
-    List<Account> findAccountsByRole(String role);
+    List<Account> readAccountsByRole(String role);
 
     //Write a derived query to list all accounts between a range of ages
     List<Account> findAccountsByAgeBetween(int age1, int age2);
