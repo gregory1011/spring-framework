@@ -19,22 +19,22 @@ public interface MovieCinemaRepo extends JpaRepository<MovieCinema, Long> {
     List<MovieCinema> countMovieCinemaById(int id);
 
     //Write a derived query to list all movie cinemas with higher than a specific date
-   // List<MovieCinema> readMovieCinemaByGreaterThanSpecificDate(LocalDateTime date);
+    List<MovieCinema> readMovieCinemaByDateTimeGreaterThan(LocalDateTime dateTime);
 
     //Write a derived query to find the top 3 expensive movies
     List<MovieCinema> readTop3ByMovie_Price(int price);
 
     //Write a derived query to list all movie cinemas that contain a specific movie name
-    //List<MovieCinema> getMovieCinemaByMovieContaining(String movie);
+    List<MovieCinema> readDistinctByMovie_Name(String name);
 
     //Write a derived query to list all movie cinemas in a specific location
-    //List<MovieCinema> readMovieCinemaByCinema_Location(String location);
+    List<MovieCinema> readMovieCinemaByCinema_Location_Name(String name);
 
     // ------------------- JPQL QUERIES ------------------- //
 
     //Write a JPQL query to list all movie cinemas with higher than a specific date
-    @Query("")
-    List<MovieCinema> readMovieCinemaByDateTime(LocalDateTime dateTime);
+    @Query("select m from MovieCinema m where m.cinema > ?1")
+    List<MovieCinema> readMovieCinemasByDateTimeGreaterThan(LocalDateTime dateTime);
 
     // ------------------- Native QUERIES ------------------- //
 

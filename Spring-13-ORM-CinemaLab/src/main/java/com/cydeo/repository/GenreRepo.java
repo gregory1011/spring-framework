@@ -13,7 +13,7 @@ public interface GenreRepo extends JpaRepository<Genre, Long> {
 
     //Write a JPQL query that return all genres
     @Query("select g from Genre g")
-    List<Genre> getAllBy();
+    List<Genre> readAll();
 
     // ------------------- Native QUERIES ------------------- //
 
