@@ -5,10 +5,12 @@ import com.cydeo.enums.MovieState;
 import com.cydeo.enums.MovieType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Repository
 public interface MovieRepo extends JpaRepository<Movie, Long> {
 
     // ------------------- DERIVED QUERIES ------------------- //
