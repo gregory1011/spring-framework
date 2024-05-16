@@ -1,6 +1,6 @@
 package com.cydeo.bootstrap;
 
-import com.cydeo.model.Course;
+
 import com.cydeo.model.Department;
 import com.cydeo.model.Employee;
 import com.cydeo.model.Region;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 @Component
 @AllArgsConstructor
