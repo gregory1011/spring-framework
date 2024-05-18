@@ -43,11 +43,11 @@ public interface MovieRepo extends JpaRepository<Movie, Long> {
     // ------------------- Native QUERIES ------------------- //
 
     //Write a native query that returns a movie by name
-    @Query(value = "select * from Movie where name = ?1", nativeQuery = true)
+    @Query(value = "select * from movie where name = ?1", nativeQuery = true)
     List<Movie> retrieveMoviesByName(String name);
 
     //Write a native query that return the list of movies in a specific range of prices
-    @Query(value = "select * from Movie where price between ?1 and ?2", nativeQuery = true)
+    @Query(value = "select * from movie where price between ?1 and ?2", nativeQuery = true)
     List<Movie> retrieveMoviesByPriceBetween(int price1, int price2);
 
     //Write a native query to return all movies where duration exists in the range of duration
