@@ -40,7 +40,7 @@ public interface AccountRepo extends JpaRepository<Account, Long> {
     List<Account> getAllAccounts();
 
     //Write a JPQL query to list all admin accounts
-    @Query("select a from Account a where a.role = 'Admin'")
+    @Query("select a from Account a where a.role = 'ADMIN'")
     List<Account> findAdminAccounts();
 
 
