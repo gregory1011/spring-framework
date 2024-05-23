@@ -30,7 +30,7 @@ public interface TicketRepo extends JpaRepository<Ticket, Long> {
 
     //Write a JPQL query that returns all tickets are bought from a specific user
     @Query("select t from Ticket t where t.userAccount.id= ?1")
-    List<Ticket> findTicketsByUserAccount(Long id);
+    List<Ticket> findTicketsByUserAccountId(Long id);
 
     //Write a JPQL query that returns all tickets between a range of dates
     @Query("select t from Ticket t where t.dateTime between ?1 and ?2")
@@ -47,19 +47,19 @@ public interface TicketRepo extends JpaRepository<Ticket, Long> {
     Integer countTicketByUserInDateRange(Long userId, LocalDateTime dateTime1, LocalDateTime dateTime2);
 
     //Write a native query to distinct all tickets by movie name
-    @Query(value = "", nativeQuery = true)
-    List<Ticket> readDistinctByMovieCinema_MovieName(String movie);
+    @Query(value = "select DISTINCT (m.name) from Ticket t join movie_cinema mc on t.movie_cinema_id = ms.id join Movie m ON mc.movie.id = m.id", nativeQuery = true)
+    List<Ticket> retrieveAllDistinctMovieName(String movie);
 
     //Write a native query to find all tickets by user email
-    @Query(value = "", nativeQuery = true)
-    List<Ticket> readTicketsByUserAccount_Email(String email);
+    @Query(value = "select * from Ticket t join user_account u ON t.user_account.id = u.id where u.email = ?1", nativeQuery = true)
+    List<Ticket> retrieveAllByUserEmail(String email);
 
     //Write a native query that returns all tickets
     @Query(value = "select * from Ticket",nativeQuery = true)
-    List<Ticket> readAllBy();
+    List<Ticket> retrieveAll();
 
     //Write a native query to list all tickets where a specific value should be containable in the username or name or movie name
-    @Query(value = "SELECT * FROM ticket t JOIN user_account ua ON t.user_account_id = ua.id " +
+    @Query(value = "SELECT t.* FROM ticket t JOIN user_account ua ON t.user_account_id = ua.id " +
             " JOIN account_details ad ON ua.account_details_id = ad.id JOIN movie_cinema mc " +
             " ON t.movie_cinema_id = mc.id JOIN movie m ON mc.movie_id = m.id " +
             " WHERE ua.username ILIKE concat('%',?1,'%') OR ad.name ILIKE concat('%',?1,'%') OR " +
