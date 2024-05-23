@@ -43,12 +43,13 @@ public class DataGenerator implements CommandLineRunner {
         System.out.println(movieRepo.retrieveMoviesByName("The Gentleman"));
         System.out.println(movieCinemaRepo.countAllByCinemaId(4L));
         System.out.println(movieCinemaRepo.findMovieCinemaByCinema_Location_Name("AMC Empire 25"));
-        System.out.println(ticketRepo.findTicketsByUserAccount(4L));
-        System.out.println(ticketRepo.readTicketByDateTimeBetween(LocalDateTime.now().minusDays(1000), LocalDateTime.now()));
-//        System.out.println(ticketRepo.retrieveAllBySearchCriteria("it"));
+        System.out.println(ticketRepo.findTicketsByUserAccountId(4L));
+        System.out.println(ticketRepo.readTicketByDateTimeBetween(LocalDateTime.now().minusDays(2000), LocalDateTime.now()));
         System.out.println(genreRepo.retrieveAll());
         System.out.println(userRepo.fetchAllUsers());
+        System.out.println(userRepo.findAllByEmail("bernard@email.com"));
         System.out.println(" = ------- |||||||||||||||||||| --------");
+         System.out.println(ticketRepo.retrieveAllBySearchCriteria("it"));
 
 
     }
