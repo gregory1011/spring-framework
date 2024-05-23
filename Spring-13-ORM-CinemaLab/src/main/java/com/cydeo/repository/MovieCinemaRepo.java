@@ -15,19 +15,19 @@ public interface MovieCinemaRepo extends JpaRepository<MovieCinema, Long> {
     // ------------------- DERIVED QUERIES ------------------- //
 
     //Write a derived query to read movie cinema with id
-    List<MovieCinema> findAllByCinemaId(Integer id);
+    Integer findAllByCinemaId(Long id);
 
     //Write a derived query to count all movie cinemas with a specific cinema id
-    List<MovieCinema> countAllByCinemaId(Integer id);
+    Integer countAllByCinemaId(Long id);
 
     //Write a derived query to list all movie cinemas with higher than a specific date
-    List<MovieCinema> findMovieCinemaByDateTimeGreaterThan(LocalDateTime dateTime);
+    List<MovieCinema> findMovieCinemaByDateTimeAfter(LocalDateTime dateTime);
 
     //Write a derived query to find the top 3 expensive movies
-    List<MovieCinema> findFirst3ByOrderByMovie_Price();
+    List<MovieCinema> findFirst3ByOrderByMovie_PriceDesc();
 
     //Write a derived query to list all movie cinemas that contain a specific movie name
-    List<MovieCinema> findMovieCinemaByMovieContaining(String name);
+    List<MovieCinema> findMovieCinemaByMovie_NameContaining(String name);
 
     //Write a derived query to list all movie cinemas in a specific location
     List<MovieCinema> findMovieCinemaByCinema_Location_Name(String location);
@@ -45,6 +45,6 @@ public interface MovieCinemaRepo extends JpaRepository<MovieCinema, Long> {
     List<MovieCinema> retrieveAllBasedOnCinemaId(Integer id);
 
     //Write a native query that returns all movie cinemas by location name
-    @Query(value = "select * from movie_cinema m join cinema c on m.id = c.cinema_id join location l on c.id = l.location_id where l.name = ?1", nativeQuery = true)
+    @Query(value = "select * from movie_cinema m join cinema c on m.id = c.cinema_id join location l on l.id = c.location_id where l.name = ?1", nativeQuery = true)
     List<MovieCinema> retrieveAllBasedOnLocationName(String name);
 }
