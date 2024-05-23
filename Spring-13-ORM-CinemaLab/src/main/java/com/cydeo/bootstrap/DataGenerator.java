@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Component
@@ -27,12 +28,6 @@ public class DataGenerator implements CommandLineRunner {
 
         // ------------------- Account DERIVED QUERIES ------------------- //
 
-//        List<Genre> comedy = genreRepo.getGenreByName("Comedy");
-//        System.out.println("comedy = " + comedy);
-
-            List<Genre> genreById = genreRepo.getGenreById(1);
-            System.out.println("genreById = " + genreById);
-
 
         // accountRepo.findByAgeLessThanEqual(40).forEach(System.out::println);
         // ------------------- Account JPQL QUERIES ------------------- //
@@ -40,6 +35,20 @@ public class DataGenerator implements CommandLineRunner {
 
         // ------------------- Account Native QUERIES ------------------- //
 
+// instructor code below to validate queries:
+
+        System.out.println(cinemaRepo.findCinemaByName("Hall 1 - EMPIRE"));
+        System.out.println(accountRepo.findAdminAccounts());
+        System.out.println(cinemaRepo.retrieveDistinctCinemasBySponsoredName());
+        System.out.println(movieRepo.retrieveMoviesByName("The Gentleman"));
+        System.out.println(movieCinemaRepo.countAllByCinemaId(4L));
+        System.out.println(movieCinemaRepo.findMovieCinemaByCinema_Location_Name("AMC Empire 25"));
+        System.out.println(ticketRepo.findTicketsByUserAccount(4L));
+        System.out.println(ticketRepo.readTicketByDateTimeBetween(LocalDateTime.now().minusDays(1000), LocalDateTime.now()));
+//        System.out.println(ticketRepo.retrieveAllBySearchCriteria("it"));
+        System.out.println(genreRepo.retrieveAll());
+        System.out.println(userRepo.fetchAllUsers());
+        System.out.println(" = ------- |||||||||||||||||||| --------");
 
 
     }
