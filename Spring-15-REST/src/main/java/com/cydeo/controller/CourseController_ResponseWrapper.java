@@ -21,15 +21,15 @@ public class CourseController_ResponseWrapper {
 
     @GetMapping
     public ResponseEntity<ResponseWrapper> getAllCourses(){
-
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
-                .header("Version","Cydeo.V3")
-                .body(new ResponseWrapper("successfully retrieved",courseService.getCourses()));
+                .header("Version", "Cydeo.V3")
+                .body(new ResponseWrapper("successfully retrieved", courseService.getCourses()));
     }
 
     @GetMapping("{id}")
     public ResponseEntity<ResponseWrapper> getCourseById(@PathVariable("id") Long courseId){
-        return ResponseEntity.ok(new ResponseWrapper("course:" + courseId + "retrieved",courseService.getCourseById(courseId)));
+        return ResponseEntity.ok(new ResponseWrapper("course: " + courseId + " retrieved", courseService.getCourseById(courseId)));
     }
+
 }
