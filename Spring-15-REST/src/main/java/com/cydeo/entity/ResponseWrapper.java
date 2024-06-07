@@ -11,7 +11,8 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 public class ResponseWrapper {
 
-    // this is additionally info for response body Json
+    // this is custom class we want to include in our custom response body
+    // this is additionally info for custom response body
 
     private boolean success;
     private String message;

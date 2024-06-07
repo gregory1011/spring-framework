@@ -12,6 +12,7 @@ import java.util.List;
 @RequestMapping("/courses/api/v2")
 public class CourseController_ResponseEntity {
 
+    // this class purpose is to include certain information that my request can take and expect a certain response accordingly
     private final CourseService courseService;
 
     public CourseController_ResponseEntity(CourseService courseService) {
@@ -21,10 +22,12 @@ public class CourseController_ResponseEntity {
     @GetMapping
     public ResponseEntity<List<CourseDTO>> getAllCourses(){
 
+        // we can manipulate however we want . status, headers
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED) // status 202
                 .header("Version", "Cydeo.V2")
                 .header("Operation", "Get List")
+                // we can customize body response
                 .body(courseService.getCourses());
     }
 
