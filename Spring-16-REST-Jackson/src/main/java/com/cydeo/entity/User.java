@@ -13,14 +13,14 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Table(name = "user_account")
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer"},ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer"}, ignoreUnknown = true)
 public class User extends BaseEntity {
 
 //    @JsonIgnore
     private String email;
 
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // they retrieve this field it won't be shown, but it will write only in DB : only setPassword() Method
     private String password;
 
 
