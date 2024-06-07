@@ -20,25 +20,30 @@ public class CourseController_ResponseEntity {
 
     @GetMapping
     public ResponseEntity<List<CourseDTO>> getAllCourses(){
+
         return ResponseEntity
-                .status(HttpStatus.ACCEPTED)
-                .header("Version","Cydeo.V2")
-                .header("Operation","Get List")
+                .status(HttpStatus.ACCEPTED) // status 202
+                .header("Version", "Cydeo.V2")
+                .header("Operation", "Get List")
                 .body(courseService.getCourses());
     }
 
 
-    @GetMapping("{id}")
-    public ResponseEntity<CourseDTO> getCourseById(@PathVariable("id") Long courseId){
-        return ResponseEntity.ok(courseService.getCourseById(courseId));
-    }
+   @GetMapping("{id}")
+   public ResponseEntity<CourseDTO> getCourseById(@PathVariable("id") Long id){
+
+        return ResponseEntity.ok(courseService.getCourseById(id));
+   }
+
 
     @PostMapping
-    public ResponseEntity<CourseDTO> createCourse(@RequestBody CourseDTO course){   //break till 8:30 pm
+   public ResponseEntity<CourseDTO> createCourse(@RequestBody CourseDTO course){
+
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .header("Operation","Create")
+                .header("Operation", "Create")
                 .body(courseService.createCourse(course));
     }
+
 
 }

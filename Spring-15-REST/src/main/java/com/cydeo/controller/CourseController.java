@@ -2,13 +2,12 @@ package com.cydeo.controller;
 
 import com.cydeo.dto.CourseDTO;
 import com.cydeo.service.CourseService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController // @Controller + @ResponseBody
-@RequestMapping("/courses/api/v1")
+@RequestMapping("/courses")
 public class CourseController {
 
     private final CourseService courseService;
@@ -25,29 +24,28 @@ public class CourseController {
     }
 
     @GetMapping("{id}")
-    public CourseDTO getCourseById(@PathVariable("id") Long courseId){
-        return courseService.getCourseById(courseId);
+    public CourseDTO getCourseById(@PathVariable("id") Long id){
+        return courseService.getCourseById(id);
     }
 
     @GetMapping("category/{name}")
     public List<CourseDTO> getCourseByCategory(@PathVariable("name") String category){
         return courseService.getCoursesByCategory(category);
-
     }
 
-    @PostMapping
+    @PostMapping()
     public CourseDTO createCourse(@RequestBody CourseDTO course){
         return courseService.createCourse(course);
     }
 
     @PutMapping("{id}")
-    public void updateCourse(@PathVariable("id") Long courseId,@RequestBody CourseDTO course){
-        courseService.updateCourse(courseId,course);
+    public void updateCourse(@PathVariable("id") Long id, @RequestBody CourseDTO course){
+        courseService.updateCourse(id, course);
     }
 
     @DeleteMapping("{id}")
-    public void deleteCourseById(@PathVariable("id") Long courseId){
-        courseService.deleteCourseById(courseId);
+    public void deleteCourseById(@PathVariable("id") Long id){
+        courseService.deleteCourseById(id);
     }
 
     @DeleteMapping
