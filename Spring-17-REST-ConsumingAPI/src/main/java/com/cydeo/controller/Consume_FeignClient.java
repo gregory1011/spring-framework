@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@AllArgsConstructor
 public class Consume_FeignClient {
 
-//    private final UserClient userClient;
-//    private final EmployeeClient employeeClient;
+    private final UserClient userClient;
+    private final EmployeeClient employeeClient;
 
 
     // this is my own api end points - localhost:/api/v1/users
