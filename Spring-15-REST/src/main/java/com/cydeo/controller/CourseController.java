@@ -2,34 +2,33 @@ package com.cydeo.controller;
 
 import com.cydeo.dto.CourseDTO;
 import com.cydeo.service.CourseService;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController // @Controller + @ResponseBody
 @RequestMapping("/courses")
 public class CourseController {
 
     private final CourseService courseService;
 
-    public CourseController(CourseService courseService) {
-        this.courseService = courseService;
-    }
-
     @GetMapping
     public List<CourseDTO> getAllCourses(){
-        List<CourseDTO> list = courseService.getCourses();
-        return list;
 
+        return courseService.getCourses();
     }
 
     @GetMapping("{id}")
     public CourseDTO getCourseById(@PathVariable("id") Long id){
+
         return courseService.getCourseById(id);
     }
 
     @GetMapping("category/{name}")
     public List<CourseDTO> getCourseByCategory(@PathVariable("name") String category){
+
         return courseService.getCoursesByCategory(category);
     }
 
