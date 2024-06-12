@@ -21,7 +21,6 @@ public class Consume_FeignClient {
     public ResponseEntity<ResponseWrapper> getUsers(){
 
         return ResponseEntity.ok(new ResponseWrapper("UserList Retrieved: ", userClient.getUsers())); // new ResponseWrapper("UserList Retrieved: ", userClient.getUsers())
-//    return null;
     }
 
 
@@ -30,7 +29,6 @@ public class Consume_FeignClient {
 
         String  token = "6298ebfecd0551211fce37a6";
         return ResponseEntity.ok(new ResponseWrapper("Successfully retrieved: ", employeeClient.getEmployees(token)));
-//    return null;
     }
 
 
