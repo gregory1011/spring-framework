@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class Selenium {
 
     public void getTeachingHours(){
-        System.out.println("Weekly teaching hours : 15");
+        System.out.println("Selenium weekly teaching hours : 15");
     }
 
 }
