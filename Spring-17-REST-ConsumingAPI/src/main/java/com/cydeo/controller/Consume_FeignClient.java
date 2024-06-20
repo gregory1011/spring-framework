@@ -27,8 +27,8 @@ public class Consume_FeignClient {
     @GetMapping("/api/v1/employee")
     public ResponseEntity<ResponseWrapper> getEmployee(){
 
-        String  token = "6298ebfecd0551211fce37a6";
-        return ResponseEntity.ok(new ResponseWrapper("Successfully retrieved: ", employeeClient.getEmployees(token)));
+        String  tok = "6298ebfecd0551211fce37a6";
+        return ResponseEntity.ok(new ResponseWrapper("Successfully retrieved: ", employeeClient.getEmployees(tok)));
     }
 
 
