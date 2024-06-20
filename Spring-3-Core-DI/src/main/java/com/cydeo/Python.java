@@ -17,7 +17,7 @@ public class Python {
 //    }
 
     public void getTeachingHours(){
-        System.out.println( "Weekly teaching hours : " + (20 + officeHours.getHours()) ); // 20 + 5 = 25
+        System.out.println( "Python weekly teaching hours : " + (20 + officeHours.getHours()) ); // 20 + 5 = 25
     }
 
 

@@ -4,7 +4,6 @@ public class MentorAccount {
     Mentor mentor;
 
     public MentorAccount(Mentor mentor) {
-
         this.mentor = mentor;
     }
 

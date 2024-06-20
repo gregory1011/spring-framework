@@ -13,10 +13,12 @@ public interface CourseService {
     List<CourseDTO> getCoursesByCategory(String category);
 
     List<CourseDTO> getCourses();
-
     void updateCourse(Long courseId, CourseDTO courseDTO);
 
     void deleteCourseById(long courseId);
 
     void deleteCourses();
+
+    List<CourseDTO> getCourseByRating(Integer rating);
+
 }
