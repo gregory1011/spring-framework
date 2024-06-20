@@ -32,6 +32,11 @@ public class CourseController {
         return courseService.getCoursesByCategory(category);
     }
 
+    @GetMapping("rating/{rating}")
+    public List<CourseDTO> getCourseByRating(@PathVariable("rating") Integer rating){
+        return courseService.getCourseByRating(rating);
+    }
+
     @PostMapping()
     public CourseDTO createCourse(@RequestBody CourseDTO course){
         return courseService.createCourse(course);
