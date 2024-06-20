@@ -40,8 +40,10 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public List<CourseDTO> getCoursesByCategory(String category) {
 
-        List<Course> list = courseRepository.findAllByCategory(category);
-        return list.stream().map(obj -> mapperUtil.convert(obj, new CourseDTO())).collect(Collectors.toList());
+        return getCourses().stream().filter( m -> m.getCategory().equalsIgnoreCase(category)).collect(Collectors.toList());
+
+//        List<Course> list = courseRepository.findAllByCategory(category);
+//        return list.stream().map(obj -> mapperUtil.convert(obj, new CourseDTO())).collect(Collectors.toList());
     }
 
     @Override
@@ -69,6 +71,12 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public void deleteCourses() {
         courseRepository.deleteAll();
+    }
+
+    @Override
+    public List<CourseDTO> getCourseByRating(Integer rating) {
+
+        return getCourses().stream().filter(m->m.getRating() == rating).collect(Collectors.toList());
     }
 
     @Override
