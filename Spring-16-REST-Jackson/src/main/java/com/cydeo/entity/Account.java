@@ -35,5 +35,4 @@ public class Account extends BaseEntity {
     @OneToOne(mappedBy = "account")
     @JsonBackReference //is the back part of reference - it will be omitted from serialization
     private User user;
-
 }
