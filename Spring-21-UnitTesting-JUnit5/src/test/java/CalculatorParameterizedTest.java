@@ -14,6 +14,7 @@ public class CalculatorParameterizedTest {
     // mvn -Dtest=TestCircle#mytest test
     // maven-surefire-plugin in pom.xml help you run mvn comand like mvn Dtest ....
     // mvn clean test
+    // to use mvn commands we need to Use @Tag("Test2") : mvn Dtest.tags.test2 ...
 
     @ParameterizedTest
     @ValueSource(ints = {3, 6, 10})
