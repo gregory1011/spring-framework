@@ -1,15 +1,11 @@
 package com.cydeo.aspect;
 
 
-import com.cydeo.annotation.Loggable;
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.List;
 
 
 @Aspect
@@ -117,7 +113,7 @@ public class LogginAspect {
 
     // ---------------------- useing custom annotaion -----------------
 
-    @Pointcut("@annotation(com.cydeo.annotation.Loggable)")
+    @Pointcut("@annotation(com.cydeo.annotation.ExecutionTime)")
     private void anyLoggableOperation() {}
 
 
