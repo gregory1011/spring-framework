@@ -12,7 +12,7 @@ public class CalculatorParameterizedTest {
     }
 
     // mvn -Dtest=TestCircle#mytest test
-    // maven-surefire-plugin
+    // maven-surefire-plugin in pom.xml help you run mvn comand like mvn Dtest ....
     // mvn clean test
 
     @ParameterizedTest
@@ -31,7 +31,7 @@ public class CalculatorParameterizedTest {
     }
 
     @ParameterizedTest
-    @MethodSource("stringProvider")
+    @MethodSource("stringProvider") // provide method name, execute each data parrticulary
     void testCase4(String arg) {
         Assertions.assertNotNull(arg);
     }
@@ -41,15 +41,15 @@ public class CalculatorParameterizedTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"10,20,30", "20,20,40", "30,20,100"})
-    void testCase5(int num1, int num2, int result) {
+    @CsvSource({"10,20,30", "20,20,40", "30,20,50"})
+    void testCase5(int num1, int num2, int result) {  // 30, 10+20 or 40, 20+20, or 30+20, 50
         Assertions.assertEquals(result, Calculator.add(num1, num2));
     }
 
-    @ParameterizedTest
-    @CsvFileSource(resources = "/sample-data.csv")
-    void testCase6(int num1, int num2, int result) {
-        Assertions.assertEquals(result, Calculator.add(num1, num2));
+    @ParameterizedTest //  numLinesToSkip = 1 - means we skip first row of the file table : num1, num2, result
+    @CsvFileSource(resources = "/sample-data.csv", numLinesToSkip = 1) // use path file to read data
+    void testCase6(int num1, int num2, int result) { // the file has 3 colomns and each int represents one colomn
+        Assertions.assertEquals(result, Calculator.add(num1, num2)); // assert data with the Calculator Java class method.add
     }
 
 }
