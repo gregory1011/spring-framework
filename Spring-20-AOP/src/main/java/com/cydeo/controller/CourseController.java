@@ -1,9 +1,8 @@
 package com.cydeo.controller;
 
-import com.cydeo.annotation.Loggable;
+import com.cydeo.annotation.ExecutionTime;
 import com.cydeo.dto.CourseDTO;
 import com.cydeo.service.CourseService;
-import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +39,7 @@ public class CourseController {
         return courseDTOList;
     }
 
-    @Loggable
+    @ExecutionTime
     @GetMapping("/{id}")
     public CourseDTO getCourseById(@PathVariable("id") Long courseId) {
         return courseService.getCourseById(courseId);
@@ -51,7 +50,7 @@ public class CourseController {
         return courseService.getCoursesByCategory(category)       ;
     }
 
-    @Loggable
+    @ExecutionTime
     @PostMapping
     public CourseDTO createCourse(@RequestBody CourseDTO course) {
         return courseService.createCourse(course);
