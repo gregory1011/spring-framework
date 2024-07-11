@@ -15,6 +15,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(WelcomeController.class)
 class WelcomeControllerTest {
 
+
+    // integration testing below
+
+
+
     @Autowired
     private MockMvc mvc;
 
@@ -47,36 +52,5 @@ class WelcomeControllerTest {
 
     }
 
-
-//    @Autowired
-//    private MockMvc mvc;
-//
-//    @Test
-//    void welcome() throws Exception {
-//
-//        // call /welcome endpoint
-//        // verify "welcome"
-//
-//        RequestBuilder request = MockMvcRequestBuilders.get("/welcome")
-//                .accept(MediaType.APPLICATION_JSON);
-//
-//        MvcResult result = mvc.perform(request).andReturn();
-//        assertEquals(200, result.getResponse().getStatus());
-//        assertEquals("welcome", result.getResponse().getContentAsString());
-//
-//    }
-//
-//    @Test
-//    void welcome2() throws Exception {
-//
-//        RequestBuilder request = MockMvcRequestBuilders.get("/welcome")
-//                .accept(MediaType.APPLICATION_JSON);
-//
-//        mvc.perform(request)
-//                .andExpect(status().isOk())
-//                .andExpect(content().string("welcome"))
-//                .andReturn();
-//
-//    }
 
 }
