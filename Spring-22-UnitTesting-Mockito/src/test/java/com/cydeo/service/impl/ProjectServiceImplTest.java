@@ -49,7 +49,7 @@ class ProjectServiceImplTest {
 
         // Then part
         //verification if mock methods are run or not
-        verify(projectRepo).findByProjectCode(anyString()); // this methods accepts any String as param
+        verify(projectRepo).findByProjectCode(anyString()); // this method accepts any String as param
         verify(projectMapper).convertToDto(any(Project.class)); // or use project entity object
 
         // assertion
@@ -90,6 +90,11 @@ class ProjectServiceImplTest {
         // assert
         verify(projectRepo).save(project);
         verify(projectMapper).convertToEntity(any(ProjectDTO.class));
+
+    }
+
+    @Test
+    void save_test2() {
 
     }
 
