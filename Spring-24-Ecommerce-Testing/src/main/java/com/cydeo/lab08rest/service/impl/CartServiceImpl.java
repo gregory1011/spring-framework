@@ -96,20 +96,20 @@ public class CartServiceImpl implements CartService {
         // we retrieve discount by name and if there is no discount with the name, we need to throw exception
         Discount discount = discountRepository.findFirstByName(discountName);
         if (discount == null) {
-            throw new RuntimeException("Discount couldn't find ");
+            throw new RuntimeException("Discount couldn't find.");
         }
 
-        // discount amount also needs to had a value, otherwise we will throw exception
+        // discount amount also needs to have a value, otherwise we will throw exception
         if (discount.getDiscount() == null) {
             throw new RuntimeException("Discount amount can not be null ");
         }
 
-        // discount minimum amount also needs to had a value, otherwise we will throw exception
+        // discount minimum amount also needs to have a value, otherwise we will throw exception
         if (discount.getMinimumAmount() == null) {
             throw new RuntimeException("Discount minimum amount can not be null ");
         }
 
-        // discount minimum amount and discount amount also needs to had a value bigger than ZERO, otherwise we will throw exception
+        // discount minimum amount and discount amount also needs to have a value bigger than ZERO, otherwise we will throw exception
         if (discount.getMinimumAmount().compareTo(BigDecimal.ZERO) <= 0 || discount.getDiscount().compareTo(BigDecimal.ZERO) <= 0) {
             throw new RuntimeException("Discount amount needs be bigger than zero ");
         }
@@ -123,7 +123,7 @@ public class CartServiceImpl implements CartService {
         // we retrieve cart total amount to decide discount is applicable to the cart
         BigDecimal totalCartAmount = calculateTotalCartAmount(cartItemList);
 
-        // if cart total amount less than discount minimum amount, no discount will be added to cart
+        // if cart total amount is less than discount minimum amount, no discount will be added to cart
         // and discount amount will be ZERO, we are returning the response without assigning any discount value to cart
         if (discount.getMinimumAmount().compareTo(totalCartAmount) > 0) {
             return BigDecimal.ZERO;

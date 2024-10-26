@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cydeo</groupId>
-    <artifactId>ecommerce-testing</artifactId>
+    <artifactId>Spring-24-Ecommerce-Testing</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ecommerce-testing</name>
     <description>ecommerce-testing</description>
