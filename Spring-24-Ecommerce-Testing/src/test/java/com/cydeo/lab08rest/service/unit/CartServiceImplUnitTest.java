@@ -203,6 +203,8 @@ public class CartServiceImplUnitTest {
         assertThat(throwable).hasMessage("Discount amount can not be null ");
     }
 
+
+
     // homework
     // discount minimum amount also needs to have a value, otherwise we will throw exception
     // discount minimum amount and discount amount also needs to have a value bigger than ZERO, otherwise we will throw exception
